@@ -1,6 +1,11 @@
-import { View, Text, ImageBackground } from 'react-native';
-import styles from './styles';
-import Button from '../Button/index';
+import {
+  View,
+  Text,
+  ImageBackground,
+  StyleSheet,
+  Dimensions,
+} from 'react-native';
+import Button from './Button.js';
 
 const CarItem = ({ car }) => {
   const { name, tagline, taglineCTA, image } = car;
@@ -31,5 +36,39 @@ const CarItem = ({ car }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  image: {
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
+    position: 'absolute',
+  },
+  carContainer: {
+    width: '100%',
+    height: Dimensions.get('window').height,
+  },
+  titles: {
+    marginTop: '30%',
+    width: '100%',
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 40,
+    fontWeight: '600',
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#5c5e62',
+  },
+  subtitleCTA: {
+    textDecorationLine: 'underline',
+  },
+  buttonsContainer: {
+    position: 'absolute',
+    bottom: 50,
+    width: '100%',
+  },
+});
 
 export default CarItem;

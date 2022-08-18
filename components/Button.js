@@ -1,6 +1,4 @@
-import { View, Text, Pressable } from 'react-native';
-import React from 'react';
-import styles from './styles';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 
 const Button = ({ type, content, onPress }) => {
   const backgroundColor = type === 'primary' ? '#171a20cc' : '#ffffffa6';
@@ -17,5 +15,24 @@ const Button = ({ type, content, onPress }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    width: '100%',
+    padding: 10,
+  },
+  button: {
+    backgroundColor: '#fff',
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 12,
+    fontWeight: '500',
+    textTransform: 'uppercase',
+  },
+});
 
 export default Button;
